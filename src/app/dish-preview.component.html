@@ -1,0 +1,6 @@
+	<div *ngIf="dish">
+		<h2>Dish preview...</h2>
+		<div><label>name:</label> {{dish.name}}</div>
+		<div><label>category: </label> {{dish.category.name}}</div>
+		<a [routerLink]="['/dish', dish.id]">Check this dish out</a>
+	</div>

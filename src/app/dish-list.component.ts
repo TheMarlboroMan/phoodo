@@ -16,27 +16,7 @@ import {CategoryService} from './category.service';
 		ul.dishes li {cursor: pointer;}
 		ul.dishes li span.dish{font-size:bold;}
 `],
-	template: `
-	<h2>Filter by category</h2>
-	<ul class="categories">
-		<li	*ngFor="let cat of category_list"
-			(click)="toggle_category(cat)">
-			{{cat.name}}
-		</li>
-	</ul>
-	<h2>Available dishes...</h2>
-	<ul class="dishes">
-		<li 	*ngFor="let dish of dish_list" 
-			(click)="select_dish(dish)" 
-			[class.selected]="dish === dish_selected">
-			{{dish.id}} : <span class="dish">{{dish.name}}</span>
-		</li>
-	</ul>
-	<dish-detail [dish]="dish_selected"></dish-detail>
-	<div *ngIf="dish_selected">
-		<input type="button" value="Clear selection" (click)="deselect_dish()" />
-	</div>
-`
+	templateUrl: './dish-list.component.html'
 })
 
 export class DishListComponent implements OnInit{

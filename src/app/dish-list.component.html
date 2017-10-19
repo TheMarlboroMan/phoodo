@@ -1,0 +1,16 @@
+	<h2>Filter by category</h2>
+	<ul class="categories">
+		<li	*ngFor="let cat of category_list"
+			(click)="toggle_category(cat)">
+			{{cat.name}}
+		</li>
+	</ul>
+	<h2>Available dishes...</h2>
+	<ul class="dishes">
+		<li 	*ngFor="let dish of dish_list" 
+			(click)="select_dish(dish)" 
+			[class.selected]="dish === dish_selected">
+			{{dish.id}} : <span class="dish">{{dish.name}}</span>
+		</li>
+	</ul>
+	<dish-preview [dish]="dish_selected"></dish-preview>

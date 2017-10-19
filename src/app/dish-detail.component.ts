@@ -1,23 +1,35 @@
-import { Component, Input } from '@angular/core';
-import { Dish } from './dish';
-import {Category} from './category';
+import {Component, Input, OnInit} from '@angular/core';
+import {ActivatedRoute, ParamMap} from '@angular/router';
+import {Location} from '@angular/common';
+import {DishService} from './dish.service';
+import {Dish} from './dish';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
 	selector: 'dish-detail',
-	template: `
-	<div *ngIf="dish">
-		<h2>Details of {{dish.name}}</h2>
-		<div><label>id:</label> {{dish.id}}</div>
-		<div><label>category: </label> {{dish.category.name}}</div>
-		<div>
-			<label>name:</label> 
-			<input [(ngModel)]="dish.name" placeholder="name" />
-		</div>
-	</div>`
+	templateUrl: './dish-detail.component.html',
+	providers: [DishService]
 })
 
-export class DishDetailComponent {
+export class DishDetailComponent implements OnInit {
 
-	//Properties...
-	@Input() dish: Dish;
+	dish: Dish;
+
+	public constructor(
+		private dish_service: DishService,
+		private route: ActivatedRoute,
+		private location: Location
+	){
+
+	}
+
+	public ngOnInit():void {
+		this.route.paramMap.
+			switchMap((params:ParamMap) => this.dish_service.get_dish_by_id(+params.get('id'))).
+			subscribe((data:Dish) => this.dish=data);
+	}
+
+	public go_back():void {
+		this.location.back();
+	}
 }
