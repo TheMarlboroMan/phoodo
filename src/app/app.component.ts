@@ -1,9 +1,15 @@
 import { Component } from '@angular/core';
-import { Dish, Category } from './dish';
+import {OnInit} from '@angular/core';
+import { Dish } from './dish';
+import { Category } from './category';
 import { DishDetailComponent } from './dish-detail.component';
+import {DishService} from './dish.service';
+import {CategoryService} from './category.service';
+
 
 @Component({
 	selector: 'app-root',
+	providers: [DishService, CategoryService],
 	styles: [`
 		.selected {background-color: #ccc;}
 		ul.dishes li:hover {background-color: blue;}
@@ -12,6 +18,13 @@ import { DishDetailComponent } from './dish-detail.component';
 `],
 	template: `
 	<h1>{{title}}</h1>
+	<h2>All categories</h2>
+	<ul class="categories">
+		<li	*ngFor="let cat of category_list"
+			(click)="toggle_category(cat)">
+			{{cat.name}}
+		</li>
+	</ul>
 	<h2>Available dishes...</h2>
 	<ul class="dishes">
 		<li 	*ngFor="let dish of dish_list" 
@@ -27,45 +40,59 @@ import { DishDetailComponent } from './dish-detail.component';
 `
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit{
 
-	//Properties...
-	title = 'Phoodo is here!!!';
-	dish_list = dishes;
-	dish_selected: Dish;
+	public title = 'Phoodo is here!!!';
+	public dish_list: Dish[];
+	public category_list: Category[];
+	public dish_selected: Dish;
+	public category_filter: Category[];
 
-	//Functions...
-	select_dish(selected: Dish): void {
+
+	public constructor(
+		private dish_service : DishService, 
+		private category_service: CategoryService) {
+
+		this.category_filter=[];
+	}
+
+	public ngOnInit(): void {
+		this.get_dishes();
+		this.get_categories();
+	}
+
+	public select_dish(selected: Dish): void {
 		this.dish_selected=selected;
 	};
 
-	deselect_dish():void {
+	public deselect_dish():void {
 		this.dish_selected=null;
 	}
+
+	public get_dishes():void {
+		this.dish_service.get_dishes().then(received_dishes => this.dish_list=received_dishes);
+	}
+
+	public get_categories():void {
+		this.category_service.get_categories().then(data => this.category_list=data);
+	}
+
+	public toggle_category(cat : Category): void {
+
+		alert(this.category_filter.length);
+
+		//TODO: CHECK THIS SHIT.
+		if(this.category_filter[cat.id]!==undefined) 
+		{
+			alert("removed");
+			this.category_filter.splice(cat.id, 1);
+		}
+		else 
+		{
+			alert("added");
+			this.category_filter[cat.id]=cat;
+		}
+
+		alert(this.category_filter.length);
+	}
 }
-
-//This should go away...
-
-const categories: Category[]=[
-	{id: 1, name: "Carnes"},
-	{id: 2, name: "Entrantes"},
-	{id: 3, name: "Otros"},
-	{id: 4, name: "Verduras"},
-	{id: 5, name: "Pescados"}
-];
-
-//This should go away too...
-
-const dishes: Dish[]=[
-	{id: 1, name: "Pollo a la miel", 	category: categories[0]},
-	{id: 2, name: "Gazpacho", category: 	categories[1]},
-	{id: 3, name: "Lomo a la sal", 		category: categories[0]},
-	{id: 4, name: "Ajoblanco", category: 	categories[2]},
-	{id: 5, name: "Arroz especial Nete", 	category: categories[2]},
-	{id: 6, name: "Menestra de verduras", 	category: categories[3]},
-	{id: 7, name: "Pisto", category: 	categories[3]},
-	{id: 8, name: "Merluza al ajillo", 	category: categories[4]},
-	{id: 9, name: "Espinacas con garbanzos", category: categories[3]},
-	{id: 10, name: "Hummus",		category: categories[1]}
-];
-

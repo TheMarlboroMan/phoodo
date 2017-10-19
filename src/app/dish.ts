@@ -1,8 +1,4 @@
-export class Category {
-
-	id: number;
-	name: string;
-}
+import {Category} from './category';
 
 export class Dish {
 	id: number;

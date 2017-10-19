@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Dish, Category } from './dish';
+import { Dish } from './dish';
+import {Category} from './category';
 
 @Component({
 	selector: 'dish-detail',
