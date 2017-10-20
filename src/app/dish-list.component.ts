@@ -6,16 +6,12 @@ import {DishDetailComponent} from './dish-detail.component';
 import {DishService} from './dish.service';
 import {CategoryService} from './category.service';
 
+//TODO: Separate dish and category lists and stuff...
 
 @Component({
 	selector: 'dish-list',
 	providers: [DishService, CategoryService],
-	styles: [`
-		.selected {background-color: #ccc;}
-		ul.dishes li:hover {background-color: blue;}
-		ul.dishes li {cursor: pointer;}
-		ul.dishes li span.dish{font-size:bold;}
-`],
+	styleUrls: ['./dish-list.component.html'],
 	templateUrl: './dish-list.component.html'
 })
 

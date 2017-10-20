@@ -4,4 +4,5 @@ export class Dish {
 	id: number;
 	name: string;
 	category: Category;
+	//TODO: Add steps too!!
 }

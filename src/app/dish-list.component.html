@@ -5,6 +5,8 @@
 			{{cat.name}}
 		</li>
 	</ul>
+	<input type="button" value="Create new category" />
+
 	<h2>Available dishes...</h2>
 	<ul class="dishes">
 		<li 	*ngFor="let dish of dish_list" 
@@ -13,4 +15,6 @@
 			{{dish.id}} : <span class="dish">{{dish.name}}</span>
 		</li>
 	</ul>
+	<input type="button" value="Create new dish" />
+	
 	<dish-preview [dish]="dish_selected"></dish-preview>

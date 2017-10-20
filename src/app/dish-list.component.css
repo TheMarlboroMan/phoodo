@@ -1,0 +1,4 @@
+.selected {background-color: #ccc;}
+ul.dishes li:hover {background-color: blue;}
+ul.dishes li {cursor: pointer;}
+ul.dishes li span.dish{font-size:bold;}
