@@ -2,13 +2,14 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 import {Location} from '@angular/common';
 import {DishService} from './dish.service';
+import {CategoryService} from './category.service';
 import {Dish} from './dish';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
 	selector: 'dish-detail',
 	templateUrl: './dish-detail.component.html',
-	providers: [DishService]
+	providers: [DishService, CategoryService]
 })
 
 export class DishDetailComponent implements OnInit {
