@@ -12,6 +12,7 @@ import { DishListComponent } from './dish-list.component';
 import { DishDetailComponent } from './dish-detail.component';
 import { DishPreviewComponent } from './dish-preview.component';
 import { PlannerComponent } from './planner.component';
+import { RegisterComponent} from './register.component';
 
 @NgModule({
 	declarations: [
@@ -21,6 +22,7 @@ import { PlannerComponent } from './planner.component';
 		DishListComponent,
 		DishPreviewComponent,
 		PlannerComponent,
+		RegisterComponent
 	],
 	imports: [
 		BrowserModule,
