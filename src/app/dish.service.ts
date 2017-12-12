@@ -18,6 +18,17 @@ export class DishService {
 	}
 
 	get_dishes(): Promise<Dish[]> {
+
+		//Okay, this is a way to artificially delay things...
+		//See, it creates a function that receives a callback and sets a timeout to call the callback with the value.
+		//That function is fed to a promise... What this seems to is bind the "resolve" of the promise to "cb"
+		//to the promise does the timeout and then does its "then" upon that, if that makes any sense.
+
+		function crap(value) {
+			function c(cb) {setTimeout( () => {cb(value);}, 2000);};
+			return new Promise(c);
+		}
+
 		return this.http.get(this.get_dishes_url)
 			.toPromise()
 			.then( (response) => {
@@ -26,8 +37,12 @@ export class DishService {
 					this.build_dish(item)
 						.then(res => {result.push(res);})
 				});
-
 				return result;
+			})
+			.then(crap)
+			.then( (delayedresult) => {
+				console.log("I waited...", delayedresult);
+				return delayedresult;
 			})
 			.catch(this.catch_error);
 	}

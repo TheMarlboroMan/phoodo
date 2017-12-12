@@ -43,7 +43,13 @@ export class DishListComponent implements OnInit{
 	}
 
 	public get_dishes():void {
-		this.dish_service.get_dishes().then(received_dishes => this.dish_list=received_dishes);
+		console.log("I am get dishes");
+		this.dish_service.get_dishes().then( (received_dishes) => {
+			console.log("In the final crap...", received_dishes);
+			this.dish_list=received_dishes; 
+			console.log("done getting dishes");
+			console.log(this.dish_list);
+		});
 	}
 
 	public get_categories():void {
