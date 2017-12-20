@@ -9,15 +9,14 @@
 
 <!--	<link href="css/bootstrap.min.css" rel="stylesheet"> -->
 	<link href="css/bootstrap.css" rel="stylesheet">
-	<link href="css/public.css" rel="stylesheet">
+	<link href="css/public.css" rel="stylesheet" id="css-public">
 	<link href="css/carousel.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
 	<script type="text/javascript" src="js/carousel.js"></script>
 </head>
 <body>
 	<div class="container-fluid bg-pattern">
-
-		<div class="row color-bg-main border-bottom-main">
+		<div id="site-header" class="row color-bg-main border-bottom-main">
 			<div class="col-md-10 col-md-offset-1">
 				<div class="row color-fg-main">
 					<div class="col-md-7">
@@ -32,63 +31,10 @@
 				</div>
 			</div>
 		</div>
-	
-		<div class="row">
-			<div class="col-md-12">
-				<div id="carousel-container"></div>
-			</div>
-		</div>		
 
-		<div class="row selling-points">
-			<div class="col-md-10 col-md-offset-1">
-				<div class="row color-bg-clear">
-					<div class="col-md-4 extra-padding ">
-						<img src="assets/question-mark-icon.svg" />
-						<h2>¿Qué es?</h2>
-						<p>
-							Phoodo es la solución a un problema muy concreto y real: organizar la comida y las compras de la semana!.
-						</p>
-						<p>
-							Phoodo integra tu propio <b>calendario</b>, <b>recetario</b> y <b>lista de la compra</b>, siempre disponibles y desde cualquier dispositivo.
-						</p>
-					</div>
-					<div class="col-md-4 extra-padding dotted-borders">
-						<img src="assets/users-icon.svg" />
-						<h2>¿Para quién?</h2>
-						<p>
-							Todo el mundo puede usar Phoodo. Phoodo es completamente <b>gratis</b> y sólo requiere de un registro rápido.
-						</p>
-						<p>
-							No quiero tu dinero, ni tus tarjetas de crédito ni mandarte spam. Francamente, no quiero saber nada de ti.
-						</p>
-					</div>
-					<div class="col-md-4 extra-padding">
-						<img src="assets/login-icon.svg" />
-						<h2>Acceder</h2>
-						<form>
-							<div>
-								<label>
-									Email:<input type="text" />
-								</label>
-							</div>
-							<div>
-								<label>
-									Pass:<input type="password" />
-								</label>
-							</div>
-							<div>
-								<input type="submit" class="btn-main" value="Acceder" />
-							</div>
-						</form>
-						<p>
-							... o <a href="">registrate</a>.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div id="main-content"></div>
 
-		<div class="row footer-info color-bg-main color-fg-main border-top-main">
+		<div id="footer-info" class="row color-bg-main color-fg-main border-top-main">
 			<div class="col-md-8 col-md-offset-2">
 				<div class="row">
 					<div class="col-md-3">
@@ -96,14 +42,14 @@
 						<ul>
 							<li><a href="">Phoodo</a></li>
 							<li><a href="">Tecnología</a></li>
-							<li><a href="">Github</a></li>
+							<li><a href="https://github.com/TheMarlboroMan">Github</a></li>
 						</ul>			
 					</div>
 					<div class="col-md-3">
 						<h3>Contrátame</h3>
 						<ul>
-							<li><a href="">Datos de contacto</a></li>
-							<li><a href="">Portfolio</a></li>
+							<li><a href="http://www.caballorenoir.net">Datos de contacto</a></li>
+							<li><a href="http://www.caballorenoir.net">Portfolio</a></li>
 						</ul>
 					</div>
 					<div class="col-md-3">
@@ -129,22 +75,11 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 </body>
+<script type="text/javascript" src="js/develtool.js"></script>
 <script type="text/javascript">
-let container=document.getElementById('carousel-container');
-let carousel_instance=new djs_simple_carousel();
-let data={
-	delay:4000, largepics: true, width: 800, height: 355, loader_image:"assets/loader.gif",
-	pics:[
-		{src:'assets/carousel-1.png', txt: '¡Cosas raras en platos metálicos!'},
-		{src:'assets/carousel-2.png', txt: '¡Dieta carnívora!'},
-		{src:'assets/carousel-3.png', txt: '¡También para aquellos que comen mucho naranja y verde!'},
-		{src:'assets/carousel-4.png', txt: '¡Especias en Inglés sacadas de filemorgue!'}
-	]
-};
-carousel_instance.init(container, data);
-carousel_instance.start();
+let devel=new develtool();
+devel.init(['home.html', 'text-section.html']);
 </script>
 </html>
