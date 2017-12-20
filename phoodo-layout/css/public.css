@@ -51,6 +51,7 @@ div#selling-points img {width: 3em;}
 div#selling-points div.extra-padding {padding: 0em 2em; margin: 3em 0em 2em 0em;}
 div#selling-points div.dotted-borders {border-right: 1px dotted #444; border-left: 1px dotted #444;}
 
+/* Footer */
 div#footer-info {font-size: 0.95em; padding: 3em 0em; margin-top: 3em;}
 div#footer-info ul {padding: 0px;}
 div#footer-info ul li {list-style: none;}

@@ -1,0 +1,27 @@
+import {NgModule, OnInit} from '@angular/core';
+import {SharedModule} from '../shared/shared.module';
+
+import {HomeComponent} from './home.component';
+
+@NgModule({
+	declarations: [
+		HomeComponent,
+	],
+	imports: [
+		SharedModule
+	],
+	exports: [
+		HomeComponent,
+	]
+})
+export class PublicModule {
+
+	public	constructor() {
+
+	}
+
+	public	ngOnInit():void {
+		//TODO: Load the fucking carousel.
+	}
+
+}
