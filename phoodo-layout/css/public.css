@@ -9,10 +9,10 @@
 
 .unfinished {color: red !important; background-color: black !important;}
 .devel {position: fixed; bottom: 0px; right: 0px; width: 100px; background: rgba(200,200,200,0.8); transition: all 0.3s ease;}
-.away {right: -80px;}
+.devel.away {right: -80px;}
 .devel input {display: block;}
 
-body {font-family: "Roboto", sans-serif; background-color: #fcf9ea;}
+body {font-family: "Roboto", sans-serif; background-color: #fcf9ea; color: #333333;}
 
 /** Color and background ... */
 .color-fg-main {color: #364408;}
@@ -32,11 +32,11 @@ a.btn {text-decoration: none; border: none; color: #fff;}
 .btn-blue:hover {background: #3868bb;}
 input[type="text"], input[type="password"] {border: 1px solid rgb(209, 213, 218); display: block; width: 100%; padding-top: 0.2em; padding-bottom: 0.2em; color: #24292e; background: #fff;}
 input[type="submit"] {border: none; margin-top: 0.4em;}
-/*a.a-btn-main {background: #CCBF80;}
-a.a-btn-main:hover {background: #B7AB73;}*/
 
 /* Header and navigation */
-#site-header h1 {font-size: 1.2em;}
+#site-header h1 {font-size: 1.2em; display: inline;}
+#site-header h1 a {text-decoration: none; color: #333333;}
+#site-header h1 a:hover {text-decoration: none; color: #333333;}
 #site-header img.app-logo {height: 2em; margin-right: 2em;}
 #site-header nav {padding: 1.1em 0em; float: right;}
 #site-header nav a {margin: 1em;}
