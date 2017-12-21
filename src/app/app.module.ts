@@ -2,7 +2,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
-
 //Custom modules.
 import {SharedModule} from './shared/shared.module';
 import {LayoutModule} from './layout/layout.module';
@@ -10,6 +9,9 @@ import {PublicModule} from './public/public.module';
 
 //Components...
 import { AppComponent } from './app.component';
+
+//Routing...
+import {Routing} from './routing';
 
 @NgModule({
 	declarations: [
@@ -19,6 +21,8 @@ import { AppComponent } from './app.component';
 		BrowserModule,
 		LayoutModule,
 		PublicModule,
+		
+		Routing
 	],
 	providers: [],
 	bootstrap: [AppComponent]

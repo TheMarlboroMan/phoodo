@@ -1,0 +1,9 @@
+/* Text pieces */
+#text-section {}
+#text-section h2 {}
+#text-section .navigation {background: rgba(239,247,150,0.5); padding: 0.2em 2em; margin-top: 2em;}
+#text-section .navigation ul.text-navigation {margin: none; padding: none;}
+#text-section .navigation ul.text-navigation li {list-style: none; display: inline; margin: none; padding: none;}
+#text-section div.section {padding: 0.2em 2em; margin-top: 2em; border: 1px dashed #777;}
+#text-section div.section p {text-align: justify;}
+#text-section div.section p.right {text-align: right; display: block; padding-right: 2em;}
