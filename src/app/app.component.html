@@ -2,8 +2,8 @@
 
 		<app-header-public></app-header-public>
 
-		<div id="main-content">	
-			<router-outlet></router-outlet>
+		<div id="main-content" [@publicchangesection]="animate_public(o)">	
+			<router-outlet #o="outlet"></router-outlet>
 		</div>
 
 		<app-footer></app-footer>

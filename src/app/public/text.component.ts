@@ -6,16 +6,11 @@ import 'rxjs/add/operator/switchMap';
 import {StaticSectionService} from './static-section.service';
 import {StaticSectionModel} from './static-section.model';
 
-import {PublicAnimationChangeSection} from './animations';
-
 @Component({
 	templateUrl:'./text.component.html',
-	styleUrls:['./text.component.css'],
-	animations:[PublicAnimationChangeSection]
+	styleUrls:['./text.component.css']
 })
 export class TextComponent implements OnInit {
-
-	@HostBinding('@publicchangesection') dummy=true;
 
 	private	model:StaticSectionModel=null;
 
@@ -41,11 +36,8 @@ export class TextComponent implements OnInit {
 					.then( (sm:StaticSectionModel) => {
 						this.model=sm;
 					})
-					//TODO: This is bullshit: doesn't work!.
 					.catch( (err) => {
-						//TODO: Go to 404.
-						console.log("FUCK YOU AND NAVIGATE TO 404 XD!");
-						this.r.navigate(['home']);
+						this.r.navigate(['404-no-encontrado']);
 					});
 			});
 	}
@@ -54,5 +46,4 @@ export class TextComponent implements OnInit {
 	public	get_section_body():string {return this.model.body;}
 	public	get_section_subtitle():string {return this.model.subtitle;}
 	public	get_section_title():string {return this.model.title;}
-
 }

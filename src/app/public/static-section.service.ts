@@ -9,16 +9,14 @@ export class StaticSectionService {
 
 	public	get_section(key:string):Promise<StaticSectionModel> {
 
-		return Promise.resolve(
-			() => static_texts[key]);
-/*
-		if(static_texts.hasOwnProperty(key)) {
-			return Promise.resolve(static_texts[key]);
-		}
-		else {
-			//TODO: This does NOT WORK.
-			throw new Error("Unknown section "+key);
-		}
-*/
+		return new Promise<StaticSectionModel>( (resolve, reject) => {
+
+			if(!static_texts.hasOwnProperty(key)) {
+				throw new Error("Unknown section "+key);
+			}
+
+			//TODO: Remove this. This is only there to make it wait.
+			setTimeout( () => resolve(static_texts[key]), 2000);
+		});
 	}
 }

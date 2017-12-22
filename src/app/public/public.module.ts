@@ -1,9 +1,13 @@
 import {NgModule} from '@angular/core';
 import {SharedModule} from '../shared/shared.module';
+//TODO: I am pretty much sure this shit will be EVERYWHERE. Maybe load it in shared?
+import {FormsModule} from '@angular/forms';
 
 import {HomeComponent} from './home.component';
 import {PageNotFoundComponent} from './page-not-found.component';
 import {TextComponent} from './text.component';
+import {LoginComponent} from './login.component';
+import {RegisterComponent} from './register.component';
 
 import {StaticSectionService} from './static-section.service';
 
@@ -16,16 +20,21 @@ import {Routing} from './routing';
 		HomeComponent,
 		PageNotFoundComponent,
 		TextComponent,
+		LoginComponent,
+		RegisterComponent,
 		BypassHtmlSanitizerPipe,
 	],
 	imports: [
 		SharedModule,
-		Routing
+		Routing,
+		FormsModule,
 	],
 	exports: [
 		HomeComponent,
 		PageNotFoundComponent,
 		TextComponent,
+		LoginComponent,
+		RegisterComponent,
 		BypassHtmlSanitizerPipe,
 	],
 	providers: [
