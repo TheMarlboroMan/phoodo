@@ -1,13 +1,18 @@
-import {Component, ElementRef, AfterContentInit, OnDestroy} from '@angular/core';
+import {Component, ElementRef, AfterContentInit, OnDestroy, HostBinding} from '@angular/core';
+
+import {PublicAnimationChangeSection} from './animations';
 
 declare var djs_simple_carousel : any;
 
 @Component({
 	selector: 'app-public-home',
 	templateUrl: './home.component.html',
-	styleUrls: ['./home.component.css']
+	styleUrls: ['./home.component.css'],
+	animations: [PublicAnimationChangeSection]
 })
 export class HomeComponent implements AfterContentInit, OnDestroy {
+
+	@HostBinding('@publicchangesection') dummy=true;
 
 	private	carousel_instance=null;
 

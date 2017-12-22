@@ -1,11 +1,11 @@
 import {Routes, RouterModule} from '@angular/router';
 
 import {PageNotFoundComponent} from './page-not-found.component';
-import {MultiTextComponent} from './multi-text.component';
+import {TextComponent} from './text.component';
 
 const routes=[
-	{path:'acerca-de',	component:MultiTextComponent},
-	{path:'tecnologia',	component:MultiTextComponent},
+	{path:'acerca-de',	component:TextComponent},
+	{path:'tecnologia',	component:TextComponent},
 ];
 
 export const Routing=RouterModule.forChild(routes);

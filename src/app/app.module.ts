@@ -1,5 +1,6 @@
 //Modules...
 import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import {NgModule} from '@angular/core';
 
 //Custom modules.
@@ -21,7 +22,7 @@ import {Routing} from './routing';
 		BrowserModule,
 		LayoutModule,
 		PublicModule,
-		
+		BrowserAnimationsModule,	
 		Routing
 	],
 	providers: [],

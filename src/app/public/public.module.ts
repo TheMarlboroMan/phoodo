@@ -3,7 +3,7 @@ import {SharedModule} from '../shared/shared.module';
 
 import {HomeComponent} from './home.component';
 import {PageNotFoundComponent} from './page-not-found.component';
-import {MultiTextComponent} from './multi-text.component';
+import {TextComponent} from './text.component';
 
 import {StaticSectionService} from './static-section.service';
 
@@ -15,7 +15,7 @@ import {Routing} from './routing';
 	declarations: [
 		HomeComponent,
 		PageNotFoundComponent,
-		MultiTextComponent,
+		TextComponent,
 		BypassHtmlSanitizerPipe,
 	],
 	imports: [
@@ -25,7 +25,7 @@ import {Routing} from './routing';
 	exports: [
 		HomeComponent,
 		PageNotFoundComponent,
-		MultiTextComponent,
+		TextComponent,
 		BypassHtmlSanitizerPipe,
 	],
 	providers: [

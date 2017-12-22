@@ -4,20 +4,18 @@
 
 				<ng-container *ngIf="is_loaded()">
 
-				<div class="navigation">
-					<h2>{{get_section_title()}}</h2>
-					<a name="navigation"> </a>
-					<ul class="text-navigation">
-						<li><a class="btn btn-main" href="section1">Section 1</a></li>
-					</ul>
-				</div>
+				<h2>{{get_section_title()}}</h2>
 
 				<div class="section color-bg-clear">
-					<a name="section1"> </a>
+	
 					<h3>{{get_section_subtitle()}}</h3>
 					<div [innerHtml]="get_section_body() | bypassHtmlSanitizer"></div>
 				</div>
 
 				</ng-container>
+				
+				<div *ngIf="!is_loaded()">
+					<p class="loading">Cargando...</p>
+				</div>
 			</div>
 		</div>		

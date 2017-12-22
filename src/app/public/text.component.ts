@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, HostBinding} from '@angular/core';
 import {ActivatedRoute, UrlSegment, Router} from '@angular/router';
 import {Observable} from 'rxjs/Observable'
 import 'rxjs/add/operator/switchMap';
@@ -6,11 +6,16 @@ import 'rxjs/add/operator/switchMap';
 import {StaticSectionService} from './static-section.service';
 import {StaticSectionModel} from './static-section.model';
 
+import {PublicAnimationChangeSection} from './animations';
+
 @Component({
-	templateUrl:'./multi-text.component.html',
-	styleUrls:['./multi-text.component.css']
+	templateUrl:'./text.component.html',
+	styleUrls:['./text.component.css'],
+	animations:[PublicAnimationChangeSection]
 })
-export class MultiTextComponent implements OnInit {
+export class TextComponent implements OnInit {
+
+	@HostBinding('@publicchangesection') dummy=true;
 
 	private	model:StaticSectionModel=null;
 
@@ -22,6 +27,8 @@ export class MultiTextComponent implements OnInit {
 	}
 
 	public	ngOnInit():void {
+
+		window.scrollTo(0,0);
 
 		this.actroute.url.
 			switchMap((data:UrlSegment[]) => {
