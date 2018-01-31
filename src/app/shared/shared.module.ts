@@ -7,13 +7,24 @@ import {CommonModule} from '@angular/common';
 
 //Components...
 
+//Directives...
+import {MatchFieldValueValidator} from './match-field-value.validator';
+
+
 @NgModule({
 	declarations: [
-	
+		MatchFieldValueValidator,
+	],
+	imports: [
+
 	],
 	exports: [
 		CommonModule,
+		MatchFieldValueValidator
 	],
+	providers: [
+
+	]
 })
 export class SharedModule {
 

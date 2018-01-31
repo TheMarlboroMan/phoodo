@@ -10,23 +10,23 @@
 			<div>
 				<label>
 					Email: 
-					<input #userfield="ngModel" type="text" name="email" id="email" [(ngModel)]="data_model.email" required />
+					<input #userfield="ngModel" type="text" name="email" id="email" [email]="true" [(ngModel)]="data_model.email" required />
 				</label>
-				<p *ngIf="userfield.touched && !userfield.valid">This field cannot be empty</p>
+				<p *ngIf="userfield.touched && !userfield.valid">Este campo debe ser un email válido.</p>
 			</div>
 			<div>
 				<label>
 					Contraseña:
-					<input #passfield="ngModel" type="password" name="pass" id="pass" [(ngModel)]="data_model.pass" required />
+					<input #passfield="ngModel" type="password" name="pass" id="pass" [(ngModel)]="data_model.pass" required minlength="4" />
 				</label>
-				<p *ngIf="passfield.touched && !passfield.valid">This field cannot be empty</p>
+				<p *ngIf="passfield.touched && !passfield.valid">La contraseña debe tener al menos cuatro caractéres.</p>
 			</div>
 			<div>
 				<label>
-					Confirmar contraseña Y QUITAR NGMODEL PORQUE NO VALE PARA MIERDA???
-					<input #passfield="ngModel" type="password" name="verify" id="verify" [(ngModel)]="data_model.verify" required />
+					Confirmar contraseña:
+					<input #validatepassfield="ngModel" type="password" name="verify" id="verify" [(ngModel)]="data_model.verify" required matchFieldValue="pass" />
 				</label>
-				<p *ngIf="passfield.touched && !passfield.valid">This field cannot be empty</p>
+				<p *ngIf="validatepassfield.touched && (!validatepassfield.valid)">Las contraseñas no coinciden.</p>
 			</div>
 			<div>
 				<input type="submit" value="Registrarse" [disabled]="!dataform.valid" />
