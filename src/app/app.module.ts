@@ -5,10 +5,11 @@ import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 
 //Custom modules.
-import {CoreModule} 	from './core/core.module';
-import {SharedModule} 	from './shared/shared.module';
-import {LayoutModule} 	from './layout/layout.module';
-import {PublicModule} 	from './public/public.module';
+import {CoreModule} 		from './core/core.module';
+import {SharedModule} 		from './shared/shared.module';
+import {LayoutModule} 		from './layout/layout.module';
+import {PublicModule}	 	from './public/public.module';
+import {EventPagesModule} 	from './event-pages/event-pages.module';
 
 //Components...
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import {Routing} from './routing';
 		BrowserModule,
 		LayoutModule,
 		PublicModule,
+		EventPagesModule,
 		BrowserAnimationsModule,
 		HttpClientModule,
 		CoreModule.forRoot(),

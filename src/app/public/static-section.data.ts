@@ -17,4 +17,17 @@ export const static_texts={
 	<li>MySQL como base de datos.</li>
 </ul>
 `),
+
+	'aviso-legal' : new StaticSectionModel('Aviso Legal', 'Aviso Legal de Phoodo', 
+`<p>Meh</p>
+`),
+
+	'proteccion-de-datos' : new StaticSectionModel('Protección de datos', 'Protección de datos', 
+`<p>Meh</p>
+`),
+
+	'politica-de-cookies' : new StaticSectionModel('Política de Cookies', 'Política de Cookies de Phoodo', 
+`<p>Meh</p>
+`),
 };
+

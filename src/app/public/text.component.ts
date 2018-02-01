@@ -28,7 +28,9 @@ export class TextComponent implements OnInit {
 		this.actroute.url.
 			switchMap((data:UrlSegment[]) => {
 				this.model=null;
-				return Promise.resolve(data[0].path);
+
+				let index=data.length-1;
+				return Promise.resolve(data[index].path);
 			})
 			.subscribe((data:string) => {
 
