@@ -12,6 +12,8 @@
 	- Figure out a way to reuse contact sections.
 		- Fill them up, real quick.
 		- In the future, add a captcha.
+	- Keep the minimum height as viewheight-header+footer.
+	- Check the style of the login form when something fails... 
 
 ##Done steps..
 

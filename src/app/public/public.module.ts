@@ -7,6 +7,7 @@ import {HomeComponent} from './home.component';
 import {PageNotFoundComponent} from './page-not-found.component';
 import {TextComponent} from './text.component';
 import {LoginComponent} from './login.component';
+import {LoginFormComponent} from './login-form.component';
 import {RegisterComponent} from './register.component';
 
 import {StaticSectionService} from './static-section.service';
@@ -22,6 +23,7 @@ import {Routing} from './routing';
 		TextComponent,
 		LoginComponent,
 		RegisterComponent,
+		LoginFormComponent,
 		BypassHtmlSanitizerPipe,
 	],
 	imports: [
@@ -30,12 +32,6 @@ import {Routing} from './routing';
 		FormsModule,
 	],
 	exports: [
-		HomeComponent,
-		PageNotFoundComponent,
-		TextComponent,
-		LoginComponent,
-		RegisterComponent,
-		BypassHtmlSanitizerPipe,
 	],
 	providers: [
 		StaticSectionService,
