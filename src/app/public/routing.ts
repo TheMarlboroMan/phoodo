@@ -30,7 +30,7 @@ const routes=[
 		]
 	},
 
-	//Simple layout...
+	//Simple layout... These are the routes in the footer of the simple layout.
 	{
 		path: '',
 		component: SimpleLayoutComponent,

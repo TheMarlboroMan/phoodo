@@ -9,7 +9,7 @@ const routes=[
 		path: '',
 		component: SimpleLayoutComponent,
 		children:[
-			{path:'something-something',	component:ValidateUserComponent},
+			{path:'validar-cuenta/:hash/:account',	component:ValidateUserComponent},
 		]
 	},
 ];

@@ -2,10 +2,13 @@
 
 ##Next steps:
 
+	- Do the login section!.
+	- Do the quick login in the home!
 	- Style the text sections.
 	- Style the register section.
-	- Do the account validation link!.
-	- Do the login section.
+	- Style the login section.
+	- Style the validation section.
+	- Create contact sections.
 	- Figure out a way to reuse contact sections.
 		- Fill them up, real quick.
 		- In the future, add a captcha.
@@ -18,3 +21,4 @@
 	- Figure out a way to reuse text sections and add them.
 		- Fill up the sections, real quick.
 	- Do the register section.
+	- Do the account validation link!.
